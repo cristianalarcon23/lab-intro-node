@@ -38,7 +38,6 @@ class SortedList {
   sum() {
     if (this.items.length===0) {
       return 0;
-      throw new Error('EmptySortedList');
     } 
     return this.items.reduce((a, b) => a + b, 0);
   }
