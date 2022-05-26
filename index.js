@@ -14,15 +14,41 @@ class SortedList {
   }
   
 
-  get(pos) {}
+  get(pos) {
+    if (pos > this.length) {
+      throw new Error('OutOfBounds');
+    }
+    return this.items[pos];
+  }
 
-  max() {}
+  max() {
+    if (this.items.length===0) {
+      throw new Error('EmptySortedList');
+    }
+    return Math.max(...this.items);
+  }
 
-  min() {}
+  min() {
+      if (this.items.length===0) {
+        throw new Error('EmptySortedList');
+      }
+      return Math.min(...this.items);
+  }
 
-  sum() {}
+  sum() {
+    if (this.items.length===0) {
+      return 0;
+      throw new Error('EmptySortedList');
+    } 
+    return this.items.reduce((a, b) => a + b, 0);
+  }
 
-  avg() {}
+  avg() {
+    if (this.items.length===0) {
+      throw new Error('EmptySortedList');
+    }
+    return this.sum(this.items) / this.length;
+  }
 }
 
 module.exports = SortedList;
